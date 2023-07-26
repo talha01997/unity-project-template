@@ -19,15 +19,15 @@ public class SaveDataDemo : MonoBehaviour
     //===================================================
     private void Start()
     {
-        _levelText.text = $"Current Level: {SaveData.Instance.Level}";
+        _levelText.text = $"Current Level: {SaveData.Instance.Data.levelNum}";
         _levelComplete.onClick.AddListener(LevelComplete);
     }//Start() end
 
     private void LevelComplete()
     {
-        SaveData.Instance.Level++;
+        SaveData.Instance.Data.levelNum++;
         SaveSystem.SaveProgress();
-        _levelText.text = $"Current Level: {SaveData.Instance.Level}";
+        _levelText.text = $"Current Level: {SaveData.Instance.Data.levelNum}";
     }//LevelComplete() end
 
 }//class end

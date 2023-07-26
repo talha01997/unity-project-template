@@ -3,7 +3,7 @@
 // in the Constructor => SaveData();
 using UnityEngine;
 using Sirenix.OdinInspector;
-
+using System;
 public sealed class SaveData
 {
     //===================================================
@@ -44,6 +44,8 @@ public sealed class SaveData
     [DisplayAsString]
     public int Coins  = 0;
 
+    public DataToSave Data;
+
     [HideInInspector]
     public string HashOfSaveData = null;
 
@@ -64,3 +66,10 @@ public sealed class SaveData
     public void Reset() => _instance = new SaveData();
 
 }//class end
+
+[Serializable]
+public class DataToSave
+{
+    public string levelType;
+    public int levelNum = 1;
+}
